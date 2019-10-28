@@ -1,0 +1,2 @@
+export const FUGLE_PICTURE_API_URL = 'https://wearn.api-dev.fugle.tw/picture/v0/card/request';
+

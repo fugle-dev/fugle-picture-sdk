@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.39/jodit.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.39/jodit.min.js"></script>
+    </head>
+
+    <body>
+        <h1> Demo </h1>
+        股號<input id="symbolId" value="2330" />
+
+        <select id="card">
+            <option value="FCRD000002">股價K線</option>,
+            <option value="FCRD000008">營收</option>,
+            <option value="FCRD000016">EPS</option>,
+            <option value="FCRD000018">本益比河流圖</option>,
+            <option value="FCRD000097">股利政策</option>,
+        </select>
+
+        <button id="insert">insert</button>
+        <textarea id="editor"></textarea>
+        
+        <script src='https://www.fugle.tw/sdk/fugle-picture-0.0.1.js'></script>
+        <script>
+            const jwtToken = 'i am token';
+            FuglePicture.init(jwtToken);
+        </script>
+    </body>
+
+    <script>
+        const editor = new Jodit('#editor');
+        document.getElementById("insert").addEventListener('click', function () {
+            const symbolId = document.getElementById('symbolId').value;
+            const card = document.getElementById('card').value;
+
+            FuglePicture.getUrl(symbolId, card).then(function (url) {
+                editor.setEditorValue(`${editor.getEditorValue()}<img width="500px" type="fugle" fugle-src="${url}" />`);
+            });
+        });
+    </script>
+</html>
