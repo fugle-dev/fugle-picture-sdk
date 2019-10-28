@@ -1,10 +1,3 @@
-# fugle-floattrade-sdk
-
-- 手機時候自動 disable
-- parcel 塞了很多東西, 改為 rollup 可能會好點
-- 可以參考 chartra
-
-
 ## Getting started
 
 The `public/index.html` file contains a `<script src='bundle.js'>` tag, which means we need to create `public/bundle.js`. The `rollup.config.js` file tells Rollup how to create this bundle, starting with `src/main.js` and including all its dependencies, including [date-fns](https://date-fns.org).
