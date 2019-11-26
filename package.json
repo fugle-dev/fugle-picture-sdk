@@ -1,5 +1,6 @@
 {
     "name": "fugle-picture-sdk",
+    "version": "0.1.0",
     "devDependencies": {
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.1.0",
